@@ -239,8 +239,7 @@ function formTitleScroll() {
         trigger: ".formScrollTextStartEnd",
         start: switchPoint,
         end: switchPoint,
-        scrub: true,
-        markers: true
+        scrub: true
       },
       position: 'relative',
       left: 0,
@@ -252,8 +251,7 @@ function formTitleScroll() {
         trigger: ".formScrollTextStartEnd",
         start: switchPoint,
         end: switchPoint,
-        scrub: true,
-        markers: true
+        scrub: true
       },
       paddingTop: 0,
       duration: 1

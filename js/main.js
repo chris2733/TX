@@ -148,7 +148,6 @@ function formTitleScroll() {
                 start: switchPoint,
                 end: switchPoint,
                 scrub: true,
-                markers: true
             },
             position: 'relative',
             left: 0,
@@ -161,7 +160,6 @@ function formTitleScroll() {
                 start: switchPoint,
                 end: switchPoint,
                 scrub: true,
-                markers: true
             },
             paddingTop: 0,
             duration: 1
