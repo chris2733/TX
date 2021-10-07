@@ -5524,6 +5524,13 @@ body.__mobile .offcanvas {
     width: 25%;
   }
 }
+.footer-menu ul li a {
+  opacity: 1;
+  transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.footer-menu ul li a:hover, .footer-menu ul li a:focus {
+  opacity: 0.5;
+}
 
 .slider {
   position: relative;

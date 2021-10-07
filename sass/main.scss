@@ -279,6 +279,14 @@ body {
                 @media (min-width: $lg) {
                     width: 25%;
                 }
+                a {
+                    opacity: 1;
+                    transition: all 0.3s $transition1;
+                    &:hover,
+                    &:focus {
+                        opacity: 0.5;
+                    }
+                }
             }
         }
     }
