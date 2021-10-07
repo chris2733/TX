@@ -60,16 +60,6 @@ $(function() {
 
 
 function headerScrollStuff(end, headerLogoHeight, headerSize, scrub, menuElToHide, mobileBoolean) {
-    gsap.to('.headerLogoAnimate', {
-        scrollTrigger: {
-            trigger: ".mainBodyAnimate",
-            start: "top",
-            end: end,
-            scrub: scrub,
-        },
-        height: headerLogoHeight,
-        duration: 1
-    });
     gsap.to('.headerSize', {
         scrollTrigger: {
             trigger: ".mainBodyAnimate",
@@ -91,6 +81,16 @@ function headerScrollStuff(end, headerLogoHeight, headerSize, scrub, menuElToHid
         duration: 1
     });
     if (mobileBoolean) {
+        gsap.to('.headerLogoAnimate', {
+            scrollTrigger: {
+                trigger: ".mainBodyAnimate",
+                start: "top",
+                end: end,
+                scrub: scrub,
+            },
+            height: headerLogoHeight,
+            duration: 1
+        });
         gsap.to(menuElToHide, {
             scrollTrigger: {
                 trigger: ".mainBodyAnimate",
@@ -101,8 +101,19 @@ function headerScrollStuff(end, headerLogoHeight, headerSize, scrub, menuElToHid
             duration: 1,
             className:"header-burger d-lg-none toggleMenu ml-auto __show"
         });
-        
     } else {
+        var logoSpaceFromBottom = (headerSize - headerLogoHeight) / 2;
+        gsap.to('.headerLogoAnimate', {
+            scrollTrigger: {
+                trigger: ".mainBodyAnimate",
+                start: "top",
+                end: end,
+                scrub: scrub,
+            },
+            height: headerLogoHeight,
+            bottom: logoSpaceFromBottom,
+            duration: 1
+        });
         gsap.to(menuElToHide, {
             scrollTrigger: {
                 trigger: ".mainBodyAnimate",

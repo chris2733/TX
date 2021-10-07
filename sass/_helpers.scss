@@ -30,6 +30,10 @@
             line-height: rem(100);
         }
         @media (min-width: $lg) {
+            font-size: rem(110);
+            line-height: rem(110);
+        }
+        @media (min-width: $xl) {
             font-size: rem(120);
             line-height: rem(120);
         }
@@ -50,6 +54,10 @@
             line-height: calc(105/100);
         }
         @media (min-width: $lg) {
+            font-size: rem(110);
+            line-height: calc(115/110);
+        }
+        @media (min-width: $xl) {
             font-size: rem(120);
             line-height: calc(125/120);
         }

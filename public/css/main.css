@@ -5367,14 +5367,15 @@ body.__mobile .offcanvas {
   border-top: 2px solid #736357;
 }
 .offcanvas-sections-title {
-  font-size: 0.75rem;
   text-transform: uppercase;
-  margin: 0 0 10px 0;
+  font-size: 0.875rem;
+  line-height: 1rem;
 }
 @media (min-width: 992px) {
   .offcanvas-sections-title {
-    margin: 0 0 15px 0;
-    font-size: 0.875rem;
+    margin: 0 0 12px 0;
+    font-size: 1rem;
+    line-height: 1.125rem;
   }
 }
 @media (min-width: 992px) {
@@ -5403,15 +5404,15 @@ body.__mobile .offcanvas {
 .offcanvas-sections-each-title,
 .offcanvas-sections-each a,
 .offcanvas-sections-each address {
-  font-size: 1rem;
-  line-height: 1.125rem;
+  font-size: 0.875rem;
+  line-height: 1rem;
 }
 @media (min-width: 992px) {
   .offcanvas-sections-each-title,
 .offcanvas-sections-each a,
 .offcanvas-sections-each address {
-    font-size: 1.125rem;
-    line-height: 1.1875rem;
+    font-size: 1rem;
+    line-height: 1.125rem;
   }
 }
 .offcanvas-sections-each a {
@@ -5438,11 +5439,17 @@ body.__mobile .offcanvas {
 }
 @media (min-width: 992px) {
   .hero-text {
+    font-size: 6.875rem;
+    line-height: 6.875rem;
+  }
+}
+@media (min-width: 1200px) {
+  .hero-text {
     font-size: 7.5rem;
     line-height: 7.5rem;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .hero-text {
     font-size: 9rem;
     line-height: 9rem;
@@ -5450,11 +5457,11 @@ body.__mobile .offcanvas {
 }
 
 .intro {
-  padding: 300px 0 120px 0;
+  padding: 50vh 0 80px 0;
 }
 @media (min-width: 992px) {
   .intro {
-    padding: 80px 0 80px 0;
+    padding: 50vh 0 100px 0;
   }
 }
 .intro-title {
@@ -5471,11 +5478,22 @@ body.__mobile .offcanvas {
   line-height: 1.1875rem;
   letter-spacing: 0em;
 }
+@media (min-width: 768px) {
+  .intro-text {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
 @media (min-width: 992px) {
+  .intro-text {
+    font-size: 2.375rem;
+    line-height: 2.375rem;
+  }
+}
+@media (min-width: 1200px) {
   .intro-text {
     font-size: 2.8125rem;
     line-height: 2.8125rem;
-    letter-spacing: 0em;
   }
 }
 
@@ -5542,19 +5560,19 @@ body.__mobile .offcanvas {
 }
 .slider-imgslider-each {
   position: relative;
+}
+.slider-imgslider-each-image {
+  display: block;
   height: 40vh;
   min-height: 400px;
 }
 @media (min-width: 992px) {
-  .slider-imgslider-each {
+  .slider-imgslider-each-image {
     height: 80vh;
     max-height: 800px;
   }
 }
-.slider-imgslider-each-img {
-  display: block;
-}
-.slider-imgslider-each-img img {
+.slider-imgslider-each-image img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -5585,6 +5603,12 @@ body.__mobile .offcanvas {
   line-height: 1.1875rem;
 }
 @media (min-width: 992px) {
+  .slider-textslider-each-trigger, .slider-textslider-each-section {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
+@media (min-width: 1200px) {
   .slider-textslider-each-trigger, .slider-textslider-each-section {
     font-size: 2.8125rem;
     line-height: 2.8125rem;
@@ -5641,11 +5665,17 @@ body.__mobile .offcanvas {
 }
 @media (min-width: 992px) {
   .formblock-form-title {
+    font-size: 6.875rem;
+    line-height: 6.875rem;
+  }
+}
+@media (min-width: 1200px) {
+  .formblock-form-title {
     font-size: 7.5rem;
     line-height: 7.5rem;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .formblock-form-title {
     font-size: 9rem;
     line-height: 9rem;
@@ -5706,11 +5736,18 @@ body.__mobile .offcanvas {
 @media (min-width: 992px) {
   .formblock-form input,
 .formblock-form textarea {
+    font-size: 6.875rem;
+    line-height: 6.875rem;
+  }
+}
+@media (min-width: 1200px) {
+  .formblock-form input,
+.formblock-form textarea {
     font-size: 7.5rem;
     line-height: 7.5rem;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .formblock-form input,
 .formblock-form textarea {
     font-size: 9rem;
@@ -5732,6 +5769,12 @@ body.__mobile .offcanvas {
   }
 }
 @media (min-width: 768px) {
+  .formblock-form input:not(:first-of-type),
+.formblock-form textarea:not(:first-of-type) {
+    margin: -20px 0 0 0;
+  }
+}
+@media (min-width: 992px) {
   .formblock-form input:not(:first-of-type),
 .formblock-form textarea:not(:first-of-type) {
     margin: -25px 0 0 0;
@@ -5761,11 +5804,18 @@ body.__mobile .offcanvas {
 @media (min-width: 992px) {
   .formblock-form input::-webkit-input-placeholder,
 .formblock-form textarea::-webkit-input-placeholder {
+    font-size: 6.875rem;
+    line-height: 1.0454545455;
+  }
+}
+@media (min-width: 1200px) {
+  .formblock-form input::-webkit-input-placeholder,
+.formblock-form textarea::-webkit-input-placeholder {
     font-size: 7.5rem;
     line-height: 1.0416666667;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .formblock-form input::-webkit-input-placeholder,
 .formblock-form textarea::-webkit-input-placeholder {
     font-size: 9rem;
@@ -5796,11 +5846,18 @@ body.__mobile .offcanvas {
 @media (min-width: 992px) {
   .formblock-form input:-moz-placeholder,
 .formblock-form textarea:-moz-placeholder {
+    font-size: 6.875rem;
+    line-height: 1.0454545455;
+  }
+}
+@media (min-width: 1200px) {
+  .formblock-form input:-moz-placeholder,
+.formblock-form textarea:-moz-placeholder {
     font-size: 7.5rem;
     line-height: 1.0416666667;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .formblock-form input:-moz-placeholder,
 .formblock-form textarea:-moz-placeholder {
     font-size: 9rem;
@@ -5831,11 +5888,18 @@ body.__mobile .offcanvas {
 @media (min-width: 992px) {
   .formblock-form input::-moz-placeholder,
 .formblock-form textarea::-moz-placeholder {
+    font-size: 6.875rem;
+    line-height: 1.0454545455;
+  }
+}
+@media (min-width: 1200px) {
+  .formblock-form input::-moz-placeholder,
+.formblock-form textarea::-moz-placeholder {
     font-size: 7.5rem;
     line-height: 1.0416666667;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .formblock-form input::-moz-placeholder,
 .formblock-form textarea::-moz-placeholder {
     font-size: 9rem;
@@ -5866,11 +5930,18 @@ body.__mobile .offcanvas {
 @media (min-width: 992px) {
   .formblock-form input:-ms-input-placeholder,
 .formblock-form textarea:-ms-input-placeholder {
+    font-size: 6.875rem;
+    line-height: 1.0454545455;
+  }
+}
+@media (min-width: 1200px) {
+  .formblock-form input:-ms-input-placeholder,
+.formblock-form textarea:-ms-input-placeholder {
     font-size: 7.5rem;
     line-height: 1.0416666667;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .formblock-form input:-ms-input-placeholder,
 .formblock-form textarea:-ms-input-placeholder {
     font-size: 9rem;

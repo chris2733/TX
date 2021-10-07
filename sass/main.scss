@@ -173,12 +173,13 @@ body {
             border-top: 2px solid $color-1;
         }
         &-title {
-            font-size: rem(12);
             text-transform: uppercase;
-            margin: 0 0 10px 0;
+            font-size: rem(14);
+            line-height: rem(16);
             @media (min-width: $menubreakpoint) {
-                margin: 0 0 15px 0;
-                font-size: rem(14);
+                margin: 0 0 12px 0;
+                font-size: rem(16);
+                line-height: rem(18);
             }
         }
         @media (min-width: $menubreakpoint) {
@@ -204,11 +205,11 @@ body {
             &-title,
             a,
             address {
-                font-size: rem(16);
-                line-height: rem(18);
+                font-size: rem(14);
+                line-height: rem(16);
                 @media (min-width: $menubreakpoint) {
-                    font-size: rem(18);
-                    line-height: rem(19);
+                    font-size: rem(16);
+                    line-height: rem(18);
                 }
             }
             a {
@@ -226,9 +227,9 @@ body {
 }
 
 .intro {
-    padding: 300px 0 120px 0;
+    padding: 50vh 0 80px 0;
     @media (min-width: $lg) {
-        padding: 80px 0 80px 0;
+        padding: 50vh 0 100px 0;
     }
     &-title {
         font-size: rem(14);
@@ -241,10 +242,17 @@ body {
         font-size: rem(18);
         line-height: rem(19);
         letter-spacing: 0em;
+        @media (min-width: $md) {
+            font-size: rem(32);
+            line-height: rem(32);
+        }
         @media (min-width: $lg) {
+            font-size: rem(38);
+            line-height: rem(38);
+        }
+        @media (min-width: $xl) {
             font-size: rem(45);
             line-height: rem(45);
-            letter-spacing: 0em;
         }
     }
 }
@@ -308,14 +316,14 @@ body {
     &-imgslider {
         &-each {
             position: relative;
-            height: 40vh;
-            min-height: 400px;
-            @media (min-width: $lg) {
-                height: 80vh;
-                max-height: 800px;
-            }
-            &-img {
+            &-image {
                 display: block;
+                height: 40vh;
+                min-height: 400px;
+                @media (min-width: $lg) {
+                    height: 80vh;
+                    max-height: 800px;
+                }
                 img {
                     height: 100%;
                     width: 100%;
@@ -352,6 +360,10 @@ body {
                 font-size: rem(18);
                 line-height: rem(19);
                 @media (min-width: $lg) {
+                    font-size: rem(32);
+                    line-height: rem(32);
+                }
+                @media (min-width: $xl) {
                     font-size: rem(45);
                     line-height: rem(45);
                 }
@@ -435,6 +447,9 @@ body {
                     margin: -11px 0 0 0;
                 }
                 @media (min-width: $md) {
+                    margin: -20px 0 0 0;
+                }
+                @media (min-width: $lg) {
                     margin: -25px 0 0 0;
                 }
             }

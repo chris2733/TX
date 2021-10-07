@@ -151,16 +151,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
 });
 
 function headerScrollStuff(end, headerLogoHeight, headerSize, scrub, menuElToHide, mobileBoolean) {
-  gsap__WEBPACK_IMPORTED_MODULE_1__["gsap"].to('.headerLogoAnimate', {
-    scrollTrigger: {
-      trigger: ".mainBodyAnimate",
-      start: "top",
-      end: end,
-      scrub: scrub
-    },
-    height: headerLogoHeight,
-    duration: 1
-  });
   gsap__WEBPACK_IMPORTED_MODULE_1__["gsap"].to('.headerSize', {
     scrollTrigger: {
       trigger: ".mainBodyAnimate",
@@ -183,6 +173,16 @@ function headerScrollStuff(end, headerLogoHeight, headerSize, scrub, menuElToHid
   });
 
   if (mobileBoolean) {
+    gsap__WEBPACK_IMPORTED_MODULE_1__["gsap"].to('.headerLogoAnimate', {
+      scrollTrigger: {
+        trigger: ".mainBodyAnimate",
+        start: "top",
+        end: end,
+        scrub: scrub
+      },
+      height: headerLogoHeight,
+      duration: 1
+    });
     gsap__WEBPACK_IMPORTED_MODULE_1__["gsap"].to(menuElToHide, {
       scrollTrigger: {
         trigger: ".mainBodyAnimate",
@@ -194,6 +194,18 @@ function headerScrollStuff(end, headerLogoHeight, headerSize, scrub, menuElToHid
       className: "header-burger d-lg-none toggleMenu ml-auto __show"
     });
   } else {
+    var logoSpaceFromBottom = (headerSize - headerLogoHeight) / 2;
+    gsap__WEBPACK_IMPORTED_MODULE_1__["gsap"].to('.headerLogoAnimate', {
+      scrollTrigger: {
+        trigger: ".mainBodyAnimate",
+        start: "top",
+        end: end,
+        scrub: scrub
+      },
+      height: headerLogoHeight,
+      bottom: logoSpaceFromBottom,
+      duration: 1
+    });
     gsap__WEBPACK_IMPORTED_MODULE_1__["gsap"].to(menuElToHide, {
       scrollTrigger: {
         trigger: ".mainBodyAnimate",
