@@ -5419,6 +5419,15 @@ body.__mobile .offcanvas {
   display: block;
   word-break: break-all;
 }
+@media (min-width: 992px) {
+  .offcanvas-sections-each a {
+    opacity: 1;
+    transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+  .offcanvas-sections-each a:hover, .offcanvas-sections-each a:focus {
+    opacity: 0.5;
+  }
+}
 
 .hero-text {
   font-size: 2.5rem;
@@ -5631,9 +5640,13 @@ body.__mobile .offcanvas {
 .formblock-title {
   margin: 0 0 10px 0;
   font-size: 0.875rem;
+  mix-blend-mode: difference;
 }
 @media (min-width: 992px) {
   .formblock-title {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
     font-size: 1rem;
   }
 }

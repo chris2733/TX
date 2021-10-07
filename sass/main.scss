@@ -215,6 +215,14 @@ body {
             a {
                 display: block;
                 word-break: break-all;
+                @media (min-width: $lg) {
+                    opacity: 1;
+                    transition: all 0.3s $transition1;
+                    &:hover,
+                    &:focus {
+                        opacity: 0.5
+                    }
+                }
             }
         }
     }
@@ -390,7 +398,11 @@ body {
     &-title {
         margin: 0 0 10px 0;
         font-size: rem(14);
+        mix-blend-mode: difference;
         @media (min-width: $lg) {
+            position: fixed;
+            bottom: 15px;
+            left: 15px;
             font-size: rem(16);
         }
     }

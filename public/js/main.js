@@ -149,6 +149,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
 
   sliders();
   heroScroll(offcanvasHeight);
+  formTitleScroll();
 });
 
 function headerScrollStuff(end, headerLogoHeight, headerSize, scrub, menuElToHide, mobileBoolean) {
@@ -239,6 +240,38 @@ function heroScroll(offcanvasHeight) {
     },
     duration: 1
   });
+}
+
+function formTitleScroll() {
+  if (window.innerWidth > 992) {
+    var formTextHeight = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.formScrollText').outerHeight(true);
+    var switchPoint = "-=".concat(window.innerHeight - formTextHeight - 15);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.formScrollTextStartEnd').css('padding-top', formTextHeight);
+    gsap__WEBPACK_IMPORTED_MODULE_1__["gsap"].to('.formScrollText', {
+      scrollTrigger: {
+        trigger: ".formScrollTextStartEnd",
+        start: switchPoint,
+        end: switchPoint,
+        scrub: true,
+        markers: true
+      },
+      position: 'relative',
+      left: 0,
+      bottom: 0,
+      duration: 1
+    });
+    gsap__WEBPACK_IMPORTED_MODULE_1__["gsap"].to('.formScrollTextStartEnd', {
+      scrollTrigger: {
+        trigger: ".formScrollTextStartEnd",
+        start: switchPoint,
+        end: switchPoint,
+        scrub: true,
+        markers: true
+      },
+      paddingTop: 0,
+      duration: 1
+    });
+  }
 }
 
 function sliders() {

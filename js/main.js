@@ -57,6 +57,8 @@ $(function() {
     sliders();
 
     heroScroll(offcanvasHeight);
+
+    formTitleScroll();
 });
 
 
@@ -147,6 +149,38 @@ function heroScroll(offcanvasHeight) {
         },
         duration: 1
     });
+}
+
+function formTitleScroll() {
+    if (window.innerWidth > 992) {
+        var formTextHeight = $('.formScrollText').outerHeight(true);
+        var switchPoint = `-=${window.innerHeight - formTextHeight - 15}`
+        $('.formScrollTextStartEnd').css('padding-top', formTextHeight);
+        gsap.to('.formScrollText', {
+            scrollTrigger: {
+                trigger: ".formScrollTextStartEnd",
+                start: switchPoint,
+                end: switchPoint,
+                scrub: true,
+                markers: true
+            },
+            position: 'relative',
+            left: 0,
+            bottom: 0,
+            duration: 1
+        });
+        gsap.to('.formScrollTextStartEnd', {
+            scrollTrigger: {
+                trigger: ".formScrollTextStartEnd",
+                start: switchPoint,
+                end: switchPoint,
+                scrub: true,
+                markers: true
+            },
+            paddingTop: 0,
+            duration: 1
+        });
+    }
 }
 
 function sliders() {
