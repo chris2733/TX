@@ -5544,10 +5544,11 @@ body.__mobile .offcanvas {
   }
 }
 .slider-imgslider-each-img {
-  height: 100%;
-  width: 100%;
+  display: block;
 }
 .slider-imgslider-each-img img {
+  height: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
