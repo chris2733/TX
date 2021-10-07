@@ -132,16 +132,16 @@ function sliders() {
         prevArrow: sliderPrev,
         nextArrow: sliderNext,
         mobileFirst: true,
+        asNavFor: textSlider
     });
     textSlider.slick({
         fade: true,
         dots: false,
+        arrows: false,
         infinite: true,
         speed: 700,
         slidesToShow: 1,
         slidesToScroll: 1,
-        prevArrow: sliderPrev,
-        nextArrow: sliderNext,
         mobileFirst: true,
         variableHeight: true,
     });
@@ -155,6 +155,10 @@ function mouseFollow(sliderNext, sliderPrev) {
     var sliderPrev = sliderPrev;
     var sliderNext = sliderNext;
     var mouseFollowEl = $('.mouseFollow');
+    var mousefollowBreakpoint = 1025;
+    if (window.innerWidth < mousefollowBreakpoint) {
+        return;
+    }
     $(sliderPrev).on('mousemove',function(e) {
         mouseFollowEl.text('Prev');
         var sliderRect = e.target.parentElement.getBoundingClientRect();

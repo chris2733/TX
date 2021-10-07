@@ -17,6 +17,7 @@
 // general
 html {
     font-size: $font-size;
+    height: 100%;
 }
 body {
     color: $font-color;
@@ -44,8 +45,8 @@ body {
 .header {
     position: fixed;
     background: $color-2;
-    height: 100vh;
-    z-index: 1;
+    height: 100%;
+    z-index: 4;
     top: 0;
     left: 0;
     width: 100%;
@@ -220,17 +221,7 @@ body {
 
 .hero {
     &-text {
-        Font-size: rem(72);
-        line-height: calc(69/72);
-        letter-spacing: -0.05em;
-        @media (min-width: $lg) {
-            font-size: rem(120);
-            line-height: calc(138/144);
-            letter-spacing: -0.05em;
-        }
-        @media (min-width: $xxl) {
-            font-size: rem(144);
-        }
+        @include bigTextSizing(false);
     }
 }
 
@@ -292,7 +283,9 @@ body {
             left: 50%;
             bottom: 0;
             z-index: 3;
-            cursor: none;
+            @media (min-width: 1025px) {
+                cursor: none;
+            }
             &.__prev {
                 width: 50%;
                 top: 0;
@@ -317,12 +310,15 @@ body {
             min-height: 400px;
             @media (min-width: $lg) {
                 height: 80vh;
+                max-height: 800px;
             }
-        }
-        img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
+            &-img {
+                height: 100%;
+                width: 100%;
+                img {
+                    object-fit: cover;
+                }
+            }
         }
     }
     &-textslider {
@@ -365,6 +361,7 @@ body {
                 transition: all 0.4s $transition1;
                 margin: -1px 0 0 0;
                 color: rgba($color-1, 0.5);
+                background: $color-2;
                 &:hover,
                 &:focus {
                     color: rgba($color-1, 1);
@@ -390,7 +387,7 @@ body {
         }
 
         &-title {
-            @include inputfontsizing(false);
+            @include bigTextSizing(false);
         }
 
         &-submit {
@@ -413,7 +410,7 @@ body {
         
         input,
         textarea {
-            @include inputfontsizing(false);
+            @include bigTextSizing(false);
             display: block;
             letter-spacing: -0.05em;
             color: $font-color;
@@ -441,25 +438,25 @@ body {
         }
         input::-webkit-input-placeholder,
         textarea::-webkit-input-placeholder {
-            @include inputfontsizing(true);
+            @include bigTextSizing(true);
             color: rgba($color-1, 0.5);
         }
 
         input:-moz-placeholder,
         textarea:-moz-placeholder {
-            @include inputfontsizing(true);
+            @include bigTextSizing(true);
             color: rgba($color-1, 0.5);
         }
 
         input::-moz-placeholder,
         textarea::-moz-placeholder {
-            @include inputfontsizing(true);
+            @include bigTextSizing(true);
             color: rgba($color-1, 0.5);
         }
 
         input:-ms-input-placeholder,
         textarea:-ms-input-placeholder {
-            @include inputfontsizing(true);
+            @include bigTextSizing(true);
             color: rgba($color-1, 0.5);
         }
         

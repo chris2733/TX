@@ -5202,6 +5202,7 @@ fieldset legend {
 
 html {
   font-size: 16px;
+  height: 100%;
 }
 
 body {
@@ -5231,8 +5232,8 @@ body.__mobile .offcanvas {
 .header {
   position: fixed;
   background: #f9f5ef;
-  height: 100vh;
-  z-index: 1;
+  height: 100%;
+  z-index: 4;
   top: 0;
   left: 0;
   width: 100%;
@@ -5419,20 +5420,26 @@ body.__mobile .offcanvas {
 }
 
 .hero-text {
-  Font-size: 4.5rem;
-  line-height: 0.9583333333;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
   letter-spacing: -0.05em;
+}
+@media (min-width: 576px) {
+  .hero-text {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+  }
 }
 @media (min-width: 992px) {
   .hero-text {
     font-size: 7.5rem;
-    line-height: 0.9583333333;
-    letter-spacing: -0.05em;
+    line-height: 7.5rem;
   }
 }
 @media (min-width: 1400px) {
   .hero-text {
     font-size: 9rem;
+    line-height: 9rem;
   }
 }
 
@@ -5504,7 +5511,11 @@ body.__mobile .offcanvas {
   left: 50%;
   bottom: 0;
   z-index: 3;
-  cursor: none;
+}
+@media (min-width: 1025px) {
+  .slider-imgsliderwrap-sliderbutton {
+    cursor: none;
+  }
 }
 .slider-imgsliderwrap-sliderbutton.__prev {
   width: 50%;
@@ -5529,11 +5540,14 @@ body.__mobile .offcanvas {
 @media (min-width: 992px) {
   .slider-imgslider-each {
     height: 80vh;
+    max-height: 800px;
   }
 }
-.slider-imgslider img {
+.slider-imgslider-each-img {
   height: 100%;
   width: 100%;
+}
+.slider-imgslider-each-img img {
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -5575,6 +5589,7 @@ body.__mobile .offcanvas {
   transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
   margin: -1px 0 0 0;
   color: rgba(115, 99, 87, 0.5);
+  background: #f9f5ef;
 }
 .slider-textslider-each-trigger:hover, .slider-textslider-each-trigger:focus {
   color: #736357;

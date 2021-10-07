@@ -222,17 +222,17 @@ function sliders() {
     arrows: true,
     prevArrow: sliderPrev,
     nextArrow: sliderNext,
-    mobileFirst: true
+    mobileFirst: true,
+    asNavFor: textSlider
   });
   textSlider.slick({
     fade: true,
     dots: false,
+    arrows: false,
     infinite: true,
     speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: sliderPrev,
-    nextArrow: sliderNext,
     mobileFirst: true,
     variableHeight: true
   });
@@ -244,6 +244,12 @@ function mouseFollow(sliderNext, sliderPrev) {
   var sliderPrev = sliderPrev;
   var sliderNext = sliderNext;
   var mouseFollowEl = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.mouseFollow');
+  var mousefollowBreakpoint = 1025;
+
+  if (window.innerWidth < mousefollowBreakpoint) {
+    return;
+  }
+
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(sliderPrev).on('mousemove', function (e) {
     mouseFollowEl.text('Prev');
     var sliderRect = e.target.parentElement.getBoundingClientRect();
@@ -25782,8 +25788,8 @@ module.exports = g;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\myprojs\HFsite\js\main.js */"./js/main.js");
-module.exports = __webpack_require__(/*! C:\myprojs\HFsite\sass\main.scss */"./sass/main.scss");
+__webpack_require__(/*! C:\myprojs\TX\js\main.js */"./js/main.js");
+module.exports = __webpack_require__(/*! C:\myprojs\TX\sass\main.scss */"./sass/main.scss");
 
 
 /***/ })
