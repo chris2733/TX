@@ -1,0 +1,23 @@
+@import 'fonts';
+
+// colors
+$color-1: #736357;
+$color-2: #f9f5ef;
+
+// font
+$font-color: $color-1;
+$font-family: 'MessinaSans';
+$font-size-num: 16;
+$font-size: #{$font-size-num}px;
+
+/* Devices */
+$xs: 575px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+// other vars here
+$menubreakpoint: $lg;
+$transition1: cubic-bezier(0.33, 1, 0.68, 1);

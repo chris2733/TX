@@ -1,0 +1,53 @@
+/* Helper functions */
+@function rem($pixels) {
+    $font-calc: $pixels / $font-size-num;
+    @return #{$font-calc}rem;
+}
+
+.sronly {
+    position: absolute;
+    left: -999999px;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    border: 0;
+    transition: none;
+}
+
+@mixin inputfontsizing($biggerLineHeight) {
+    @if $biggerLineHeight == false {
+        font-size: rem(40);
+        line-height: rem(40);
+        letter-spacing: -0.05em;
+        @media (min-width: $sm) {
+            font-size: rem(72);
+            line-height: rem(72);
+        }
+        @media (min-width: $lg) {
+            font-size: rem(120);
+            line-height: rem(120);
+        }
+        @media (min-width: $xxl) {
+            font-size: rem(144);
+            line-height: rem(144);
+        }
+    } @else {
+        font-size: rem(40);
+        line-height: calc(44/40);
+        letter-spacing: -0.05em;
+        @media (min-width: $sm) {
+            font-size: rem(72);
+            line-height: calc(80/72);
+        }
+        @media (min-width: $lg) {
+            font-size: rem(120);
+            line-height: calc(125/120);
+        }
+        @media (min-width: $xxl) {
+            font-size: rem(144);
+            line-height: calc(150/144);
+        }
+    }
+}

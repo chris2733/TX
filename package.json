@@ -1,0 +1,28 @@
+{
+  "name": "hfsite",
+  "author": "",
+  "version": "1.0.0",
+  "description": "hf site build tools",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "laravel-mix": "^5.0.7",
+    "popper.js": "^1.16.1",
+    "resolve-url-loader": "^3.1.2",
+    "sass": "^1.27.0",
+    "sass-loader": "^8.0.2",
+    "slick-slider": "^1.8.2",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "gsap": "^3.8.0",
+    "jquery": "^3.5.1"
+  }
+}

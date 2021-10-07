@@ -1,0 +1,467 @@
+// Bootstrap loader
+@import '~bootstrap/scss/_functions';
+@import '~bootstrap/scss/_variables';
+@import '~bootstrap/scss/_mixins';
+@import '~bootstrap/scss/_root';
+@import '~bootstrap/scss/_grid';
+@import '~bootstrap/scss/_utilities';
+
+//Plugin includes
+@import '~slick-slider/slick/slick';
+
+@import 'config';
+@import 'reset';
+@import 'helpers';
+
+
+// general
+html {
+    font-size: $font-size;
+}
+body {
+    color: $font-color;
+    background: $color-2;
+    font-family: $font-family;
+    overflow-x: hidden;
+
+    &.__mobile {
+        overflow: hidden;
+        .offcanvas {
+            left: 0;
+        }
+    }
+}
+
+.main {
+    padding: calc(100vh + 140px) 0 0 0;
+    opacity: 0;
+    overflow: hidden;
+    @media (min-width: $lg) {
+        padding: calc(100vh + 240px) 0 0 0;
+    }
+}
+
+.header {
+    position: fixed;
+    background: $color-2;
+    height: 100vh;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    &-logo {
+        position: absolute;
+        bottom: 12px;
+        left: 12px;
+        max-width: 90%;
+        height: 100px;
+        @media (min-width: $menubreakpoint) {
+            height: 250px;
+            bottom: 25px;
+            left: 25px;
+        }
+    }
+    &-burger {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        font-size: 0;
+        background: none;
+        color: $color-1;
+        z-index: 3;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s $transition1, right 0s ease 0.1s;
+        right: -50vw;
+        display: block;
+        &.__show {
+            right: 0;
+            opacity: 1;
+            transition: opacity 0.3s $transition1 0.1s, right 0s ease 0s;
+        }
+        &-toggle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 34px;
+            height: 2px;
+            background: rgba($color-1, 0.6);
+            transition: all 0.3s $transition1;
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                border-radius: 1px;
+                background: rgba($color-1, 0.6);
+                transform: translateZ(0);
+                backface-visibility: hidden;
+                transition: all 0.3s $transition1;
+            }
+            &:before {
+                top: -11px;
+                transform: rotate(0);
+            }
+            &:after {
+                bottom: -11px;
+                transform: rotate(0);
+            }
+        }
+        &.__active {
+            // transform: translateX(-120px);
+            .header-burger {
+                &-toggle {
+                    background: transparent;
+                    &:before {
+                        top: 0;
+                        transform: rotate(45deg);
+                    }
+                    &:after {
+                        bottom: 0;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.offcanvas {
+    position: fixed;
+    top: 60px;
+    left: 100%;
+    transition: all 0.5s $transition1;
+    z-index: 2;
+    height: calc(100vh - 60px);
+    padding: 120px 15px;
+    overflow-y: scroll;
+    width: 100vw;
+    background: $color-2;
+    @media (min-width: $menubreakpoint) {
+        position: relative;
+        width: 70%;
+        top: auto;
+        left: auto;
+        height: auto;
+        padding: 20px 0;
+        min-height: 130px;
+        opacity: 0;
+        transition: all 0s;
+        background: none;
+        overflow: hidden;
+    }
+    @media (min-width: $xl) {
+        position: relative;
+        width: 60%;
+    }
+    @media (min-width: 1600px) {
+        position: relative;
+        width: 50%;
+    }
+    &-sections {
+        border-bottom: 2px solid $color-1;
+        padding: 15px 0;
+        @media (min-width: $menubreakpoint) {
+            padding: 0;
+        }
+        &:first-of-type {
+            border-top: 2px solid $color-1;
+        }
+        &-title {
+            font-size: rem(12);
+            text-transform: uppercase;
+            margin: 0 0 10px 0;
+            @media (min-width: $menubreakpoint) {
+                margin: 0 0 15px 0;
+                font-size: rem(14);
+            }
+        }
+        @media (min-width: $menubreakpoint) {
+            border: none;
+            width: 25%;
+            &.__doubleup {
+                width: 50%;
+                .offcanvas-sections-each {
+                    width: 50%;
+                }
+            }
+            &:first-of-type {
+                border: none;
+            }
+        }
+        &-each {
+            &:not(:first-of-type) {
+                margin: 15px 0 0 0;
+                @media (min-width: $menubreakpoint) {
+                    margin: 0;
+                }
+            }
+            &-title,
+            a,
+            address {
+                font-size: rem(16);
+                line-height: rem(18);
+                @media (min-width: $menubreakpoint) {
+                    font-size: rem(18);
+                    line-height: rem(19);
+                }
+            }
+            a {
+                display: block;
+                word-break: break-all;
+            }
+        }
+    }
+}
+
+.hero {
+    &-text {
+        Font-size: rem(72);
+        line-height: calc(69/72);
+        letter-spacing: -0.05em;
+        @media (min-width: $lg) {
+            font-size: rem(120);
+            line-height: calc(138/144);
+            letter-spacing: -0.05em;
+        }
+        @media (min-width: $xxl) {
+            font-size: rem(144);
+        }
+    }
+}
+
+.intro {
+    padding: 300px 0 120px 0;
+    @media (min-width: $lg) {
+        padding: 80px 0 80px 0;
+    }
+    &-title {
+        font-size: rem(14);
+        margin: 0 0 15px 0;
+        @media (min-width: $lg) {
+            font-size: rem(16);
+        }
+    }
+    &-text {
+        font-size: rem(18);
+        line-height: rem(19);
+        letter-spacing: 0em;
+        @media (min-width: $lg) {
+            font-size: rem(45);
+            line-height: rem(45);
+            letter-spacing: 0em;
+        }
+    }
+}
+
+.footer {
+    &-menu {
+        @media (min-width: $menubreakpoint) {
+            width: 70%;
+        }
+        @media (min-width: $xl) {
+            width: 50%;
+        }
+        ul {
+            li {
+                min-width: 25%;
+                @media (min-width: $lg) {
+                    width: 25%;
+                }
+            }
+        }
+    }
+}
+
+.slider {
+    position: relative;
+    margin: 0 0 60px 0;
+    @media (min-width: $md) {
+        margin: 0 0 150px 0;
+    }
+    &-imgsliderwrap {
+        position: relative;
+        &-sliderbutton {
+            position: absolute;
+            width: 50%;
+            top: 0;
+            left: 50%;
+            bottom: 0;
+            z-index: 3;
+            cursor: none;
+            &.__prev {
+                width: 50%;
+                top: 0;
+                left: 0;
+                bottom: 0;
+            }
+        }
+        &-mousefollow {
+            position: absolute;
+            font-size: rem(30);
+            color: #fff;
+            mix-blend-mode: difference;
+            z-index: 2;
+            opacity: 0;
+            transform: translate(-50%,-50%);
+        }
+    }
+    &-imgslider {
+        &-each {
+            position: relative;
+            height: 40vh;
+            min-height: 400px;
+            @media (min-width: $lg) {
+                height: 80vh;
+            }
+        }
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &-textslider {
+        .slick-active {
+            transition-delay: 0.7s !important;
+        }
+        &-each {
+            &-topsection,
+            &-bottomsection {
+                display: flex;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+            }
+            &-section {
+                width: calc(50% - 3px);
+                padding: 20px 0;
+                margin: 0 3px 0 0;
+                border-bottom: 1px solid $color-1;
+                &:nth-of-type(2n) {
+                    margin: 0 0 0 3px;
+                }
+                &.__lastsection {
+                    border: none;
+                }
+            }
+            &-trigger,
+            &-section {
+                font-size: rem(18);
+                line-height: rem(19);
+                @media (min-width: $lg) {
+                    font-size: rem(45);
+                    line-height: rem(45);
+                }
+            }
+            &-trigger {
+                border-top: 1px solid $color-1;
+                padding: 15px 0;
+                width: 100%;
+                text-align: left;
+                transition: all 0.4s $transition1;
+                margin: -1px 0 0 0;
+                color: rgba($color-1, 0.5);
+                &:hover,
+                &:focus {
+                    color: rgba($color-1, 1);
+                }
+            }
+        }
+    }
+}
+
+.formblock {
+    &-title {
+        margin: 0 0 10px 0;
+        font-size: rem(14);
+        @media (min-width: $lg) {
+            font-size: rem(16);
+        }
+    }
+    &-form {
+        font-size: rem(14);
+        margin: 0 0 15px -3px;
+        @media (min-width: $sm) {
+            margin: 0 0 15px -7px;
+        }
+
+        &-title {
+            @include inputfontsizing(false);
+        }
+
+        &-submit {
+            font-size: rem(20);
+            transition: all 0.3s $transition1;
+            color: $color-1;
+            margin: 30px 0 0 0;
+            @media (min-width: $sm) {
+                margin: 30px 0 0 0.5rem;
+            }
+            @media (min-width: $md) {
+                font-size: rem(28);
+                margin: 40px 0 0 0.5rem;
+            }
+            &:hover,
+            &:focus {
+                opacity: 0.7;
+            }
+        }
+        
+        input,
+        textarea {
+            @include inputfontsizing(false);
+            display: block;
+            letter-spacing: -0.05em;
+            color: $font-color;
+            background: none;
+            border-radius: 0;
+            border: none;
+            box-sizing: border-box;
+            font-family: $font-family;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s $transition1;
+            width: 100%;
+            &:focus {
+                outline: #000;
+            }
+            &:not(:first-of-type) {
+                margin: -5px 0 0 0;
+                @media (min-width: $sm) {
+                    margin: -11px 0 0 0;
+                }
+                @media (min-width: $md) {
+                    margin: -25px 0 0 0;
+                }
+            }
+        }
+        input::-webkit-input-placeholder,
+        textarea::-webkit-input-placeholder {
+            @include inputfontsizing(true);
+            color: rgba($color-1, 0.5);
+        }
+
+        input:-moz-placeholder,
+        textarea:-moz-placeholder {
+            @include inputfontsizing(true);
+            color: rgba($color-1, 0.5);
+        }
+
+        input::-moz-placeholder,
+        textarea::-moz-placeholder {
+            @include inputfontsizing(true);
+            color: rgba($color-1, 0.5);
+        }
+
+        input:-ms-input-placeholder,
+        textarea:-ms-input-placeholder {
+            @include inputfontsizing(true);
+            color: rgba($color-1, 0.5);
+        }
+        
+    }
+}
