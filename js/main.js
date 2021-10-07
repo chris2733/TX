@@ -27,20 +27,6 @@ $(function() {
         $('body').toggleClass('__mobile');
     });
 
-    // timeline demo
-    // var headerHeight = window.innerHeight;
-    // const tl = gsap.timeline({
-    //     scrollTrigger: {
-    //         trigger: ".headerScrollTrigger",
-    //         start: "top",
-    //         end: "bottom",
-    //         scrub: true,
-    //         markers: true
-    //     }
-    // });
-    // tl.to(".headerLogoAnimate", {height: 70, duration: 1});
-    // tl.to(".mainBodyAnimate", {opacity: 1, duration: 1});
-
     // scroll breakpoints
     // get window height
     var windowHeight = window.innerHeight;
@@ -137,7 +123,7 @@ function heroScroll(offcanvasHeight) {
         var offset = `+=${window.innerWidth * 0.2}`;
     } else {
         var start = "-=70";
-        var offset = `+=${window.innerWidth * 0.8}`;
+        var offset = `+=${window.innerWidth * 0.6}`;
     }
     gsap.to('.heroScrollMove', {
         scrollTrigger: {
