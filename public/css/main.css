@@ -5457,11 +5457,11 @@ body.__mobile .offcanvas {
 }
 
 .intro {
-  padding: 50vh 0 80px 0;
+  padding: 60px 0 80px 0;
 }
 @media (min-width: 992px) {
   .intro {
-    padding: 50vh 0 100px 0;
+    padding: 100px 0 100px 0;
   }
 }
 .intro-title {

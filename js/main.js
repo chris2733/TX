@@ -55,6 +55,8 @@ $(function() {
     }
 
     sliders();
+
+    heroScroll(offcanvasHeight);
 });
 
 
@@ -125,6 +127,26 @@ function headerScrollStuff(end, headerLogoHeight, headerSize, scrub, menuElToHid
             opacity: 1,
         });
     }
+}
+
+function heroScroll(offcanvasHeight) {
+    if (window.innerWidth > 992) {
+        var start = `-=${offcanvasHeight}`;
+        var offset = `+=${window.innerWidth * 0.2}`;
+    } else {
+        var start = "-=70";
+        var offset = `+=${window.innerWidth * 0.8}`;
+    }
+    gsap.to('.heroScrollMove', {
+        scrollTrigger: {
+            trigger: ".heroScroll",
+            start: start,
+            pin: true,
+            end: offset,
+            scrub: true,
+        },
+        duration: 1
+    });
 }
 
 function sliders() {

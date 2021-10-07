@@ -148,6 +148,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   }
 
   sliders();
+  heroScroll(offcanvasHeight);
 });
 
 function headerScrollStuff(end, headerLogoHeight, headerSize, scrub, menuElToHide, mobileBoolean) {
@@ -217,6 +218,27 @@ function headerScrollStuff(end, headerLogoHeight, headerSize, scrub, menuElToHid
       opacity: 1
     });
   }
+}
+
+function heroScroll(offcanvasHeight) {
+  if (window.innerWidth > 992) {
+    var start = "-=".concat(offcanvasHeight);
+    var offset = "+=".concat(window.innerWidth * 0.2);
+  } else {
+    var start = "-=70";
+    var offset = "+=".concat(window.innerWidth * 0.8);
+  }
+
+  gsap__WEBPACK_IMPORTED_MODULE_1__["gsap"].to('.heroScrollMove', {
+    scrollTrigger: {
+      trigger: ".heroScroll",
+      start: start,
+      pin: true,
+      end: offset,
+      scrub: true
+    },
+    duration: 1
+  });
 }
 
 function sliders() {
