@@ -172,6 +172,11 @@ function sliders() {
     var textSlider = $(".textSlider");
     var sliderPrev = $('.sliderPrev');
     var sliderNext = $('.sliderNext');
+    if (window.innerWidth > 992) {
+        var showArrows = true;
+    } else {
+        var showArrows = false;
+    }
     imgSlider.slick({
         fade: false,
         dots: false,
@@ -179,7 +184,7 @@ function sliders() {
         speed: 300,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: true,
+        arrows: showArrows,
         prevArrow: sliderPrev,
         nextArrow: sliderNext,
         mobileFirst: true,

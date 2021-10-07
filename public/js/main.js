@@ -264,6 +264,13 @@ function sliders() {
   var textSlider = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".textSlider");
   var sliderPrev = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sliderPrev');
   var sliderNext = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sliderNext');
+
+  if (window.innerWidth > 992) {
+    var showArrows = true;
+  } else {
+    var showArrows = false;
+  }
+
   imgSlider.slick({
     fade: false,
     dots: false,
@@ -271,7 +278,7 @@ function sliders() {
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: showArrows,
     prevArrow: sliderPrev,
     nextArrow: sliderNext,
     mobileFirst: true,
