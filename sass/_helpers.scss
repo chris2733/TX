@@ -25,6 +25,10 @@
             font-size: rem(72);
             line-height: rem(72);
         }
+        @media (min-width: $md) {
+            font-size: rem(100);
+            line-height: rem(100);
+        }
         @media (min-width: $lg) {
             font-size: rem(120);
             line-height: rem(120);
@@ -40,6 +44,10 @@
         @media (min-width: $sm) {
             font-size: rem(72);
             line-height: calc(80/72);
+        }
+        @media (min-width: $md) {
+            font-size: rem(100);
+            line-height: calc(105/100);
         }
         @media (min-width: $lg) {
             font-size: rem(120);

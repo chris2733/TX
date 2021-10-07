@@ -277,14 +277,16 @@ body {
     &-imgsliderwrap {
         position: relative;
         &-sliderbutton {
+            display: none;
             position: absolute;
             width: 50%;
             top: 0;
             left: 50%;
             bottom: 0;
             z-index: 3;
+            cursor: none;
             @media (min-width: 1025px) {
-                cursor: none;
+                display: block;
             }
             &.__prev {
                 width: 50%;

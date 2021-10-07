@@ -5430,6 +5430,12 @@ body.__mobile .offcanvas {
     line-height: 4.5rem;
   }
 }
+@media (min-width: 768px) {
+  .hero-text {
+    font-size: 6.25rem;
+    line-height: 6.25rem;
+  }
+}
 @media (min-width: 992px) {
   .hero-text {
     font-size: 7.5rem;
@@ -5505,16 +5511,18 @@ body.__mobile .offcanvas {
   position: relative;
 }
 .slider-imgsliderwrap-sliderbutton {
+  display: none;
   position: absolute;
   width: 50%;
   top: 0;
   left: 50%;
   bottom: 0;
   z-index: 3;
+  cursor: none;
 }
 @media (min-width: 1025px) {
   .slider-imgsliderwrap-sliderbutton {
-    cursor: none;
+    display: block;
   }
 }
 .slider-imgsliderwrap-sliderbutton.__prev {
@@ -5625,6 +5633,12 @@ body.__mobile .offcanvas {
     line-height: 4.5rem;
   }
 }
+@media (min-width: 768px) {
+  .formblock-form-title {
+    font-size: 6.25rem;
+    line-height: 6.25rem;
+  }
+}
 @media (min-width: 992px) {
   .formblock-form-title {
     font-size: 7.5rem;
@@ -5682,6 +5696,13 @@ body.__mobile .offcanvas {
     line-height: 4.5rem;
   }
 }
+@media (min-width: 768px) {
+  .formblock-form input,
+.formblock-form textarea {
+    font-size: 6.25rem;
+    line-height: 6.25rem;
+  }
+}
 @media (min-width: 992px) {
   .formblock-form input,
 .formblock-form textarea {
@@ -5730,6 +5751,13 @@ body.__mobile .offcanvas {
     line-height: 1.1111111111;
   }
 }
+@media (min-width: 768px) {
+  .formblock-form input::-webkit-input-placeholder,
+.formblock-form textarea::-webkit-input-placeholder {
+    font-size: 6.25rem;
+    line-height: 1.05;
+  }
+}
 @media (min-width: 992px) {
   .formblock-form input::-webkit-input-placeholder,
 .formblock-form textarea::-webkit-input-placeholder {
@@ -5756,6 +5784,13 @@ body.__mobile .offcanvas {
 .formblock-form textarea:-moz-placeholder {
     font-size: 4.5rem;
     line-height: 1.1111111111;
+  }
+}
+@media (min-width: 768px) {
+  .formblock-form input:-moz-placeholder,
+.formblock-form textarea:-moz-placeholder {
+    font-size: 6.25rem;
+    line-height: 1.05;
   }
 }
 @media (min-width: 992px) {
@@ -5786,6 +5821,13 @@ body.__mobile .offcanvas {
     line-height: 1.1111111111;
   }
 }
+@media (min-width: 768px) {
+  .formblock-form input::-moz-placeholder,
+.formblock-form textarea::-moz-placeholder {
+    font-size: 6.25rem;
+    line-height: 1.05;
+  }
+}
 @media (min-width: 992px) {
   .formblock-form input::-moz-placeholder,
 .formblock-form textarea::-moz-placeholder {
@@ -5812,6 +5854,13 @@ body.__mobile .offcanvas {
 .formblock-form textarea:-ms-input-placeholder {
     font-size: 4.5rem;
     line-height: 1.1111111111;
+  }
+}
+@media (min-width: 768px) {
+  .formblock-form input:-ms-input-placeholder,
+.formblock-form textarea:-ms-input-placeholder {
+    font-size: 6.25rem;
+    line-height: 1.05;
   }
 }
 @media (min-width: 992px) {
